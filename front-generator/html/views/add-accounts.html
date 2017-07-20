@@ -1,0 +1,278 @@
+<h3>Link Accounts
+   <small>Please select Originator.</small>
+</h3>
+<div ng-controller="accountsController" class="portlets-wrapperAccount1 wrapperAccount1">
+  <div flash-alert="{{flash.type}}" active-class="in alert" class="fade">
+    <span class="alert-message">{{flash.message}}</span>
+  </div>
+<!-- START row-->
+<div ng-hide="accountClicked">
+   <div class="col-xs-12">
+      <!-- START panel-->
+      <div class="col-xs-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" hidden="hidden">
+          <input type="text" class="searchBar" name="search" placeholder="Search for P2P Lender">
+           <input type="button" class="searchButton" value="Search">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8"></div> <!-- remove once search bar is implemented -->
+    <div class="col-xs-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" hidden="hidden">
+          <h4 class="header1">Or select from one of these Lending Institutions</h4>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-xs-12"> <!-- remove once search bar is implemented -->
+          <h4 class="header12">Please select from one of these Lending Institutions</h4> <!-- remove once search bar is implemented -->
+      </div> <!-- remove once search bar is implemented -->
+      </div>
+    <div class="row">
+         
+            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 padding-left-0">
+              <input type="image" class="imageBox" src="/images/front/companies/lendingclub.png" name="lendingClub" ng-click="LendingClub = true;accountClicked = true">
+            </div>
+           
+            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 padding-left-0">
+              <input type="image" class="imageBox" src="/images/front/companies/prosper.png" name="prosper" ng-click="Prosper = true;accountClicked = true">
+            </div>
+            
+            <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 padding-left-0">
+              <input type="image" class="imageBox" src="/images/front/companies/fundingcircle.png" name="fundingCircle" ng-click="FundingCircle = true;accountClicked = true">
+            </div>
+        </div>
+        <div class="row" hidden="hidden">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3">
+              <input type="image" class="imageBox" src="/images/front/companies/cn.png" name="temp" ng-click="accountClicked = true">
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3">
+              <input type="image" class="imageBox" src="/images/front/companies/cn.png" name="temp" ng-click="accountClicked = true">
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3">
+              <input type="image" class="imageBox" src="/images/front/companies/cn.png" name="temp" ng-click="accountClicked = true">
+            </div>
+        </div>          
+      <!-- END panel -->
+   
+    
+</div>
+<!-- END row-->
+<!--Start Lending Club-->
+<div class="wrapperAccount" ng-show="LendingClub">
+  <div>
+    <input type="image" class="backArrow" name="backArrowLc" src="/images/front/backArrow.png" ng-click="LendingClub = false;accountClicked = false">
+  </div>
+  <form form-wizard="" role="form1" ng-submit="addPlatformLC(mp_lc)">
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-xs-8 col-sm-8 Img">
+        <img width="75%" src="/images/front/companies/lendingclub.png">
+      </div>
+      <div class="col-md-6 col-lg-6 col-xs-4 col-sm-4 text-right">
+        <h4>
+          <em class="icon-question" ng-click="loadHelp('lc')"></em>
+        </h4>
+        <div>
+          <a href="https://www.lendingclub.com/account/gotoLogin.action" target="_blank">Sign In</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row header3">
+      <div class="col-xs-12 text">
+        <h4>Please provide login credentials to automate trading with Lending Club.</h4>
+      </div>
+    </div>
+
+    <div class="row header2">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>ACCOUNT #</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_lc.lc_account_id"  name="lcAccountNum" required="true" data-parsley-required-message="Please enter a valid account number." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>API KEY</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_lc.lc_api_key" name="lcApi" required="true" data-parsley-required-message="Please enter valid a valid API Key." placeholder="Required" >
+         </div>
+      </div>
+    </div>
+
+  <div class="row header2">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center"><input type="submit" class="linkButton" name="linkAccountsLc" value="Link Account"></div>
+  </div>
+
+  </form>
+</div>
+<!--End LendingClub-->
+    
+<!--Start Prosper-->
+
+<div ng-show="Prosper">
+  <div>
+    <input type="image" class="backArrow" name="backArrowLc" src="/images/front/backArrow.png" ng-click="Prosper = false;accountClicked = false">
+  </div>
+  <form form-wizard="" role="form1" ng-submit="addPlatformProsper(mp_prosper)">
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-xs-8 col-sm-8 Img">
+        <img width="75%" src="/images/front/companies/prosper.png">
+      </div>
+      <div class="col-md-6 col-lg-6 col-xs-4 col-sm-4 text-right">
+        <h4>
+          <em class="icon-question" ng-click="loadHelp('prosper')"></em>
+        </h4>
+        <div>
+          <a href="https://www.prosper.com/signin" target="_blank">Sign In</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row header3">
+      <div class="col-xs-12 text">
+        <h4>Please provide login credentials to automate trading with Prosper.</h4>
+      </div>
+    </div>
+    
+    <div class="row header2">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>CLIENT ID</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_prosper.p_clientid"  name="pAccountNum" required="true" data-parsley-required-message="Please enter a valid account number." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>CLIENT SECRET</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_prosper.p_clientsecret" name="pApi" required="true" data-parsley-required-message="Please enter valid a valid API Key." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>USERNAME</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_prosper.p_username"  name="pUsername" required="true" data-parsley-required-message="Please enter a valid username." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>PASSWORD</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_prosper.p_password" name="pPassword" required="true" data-parsley-required-message="Please enter valid password." placeholder="Required">
+         </div>
+      </div>
+    </div>
+
+  <div class="row header2">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center"><input type="submit" class="linkButton" name="linkAccountsProsper" value="Link Account"></div>
+  </div>
+
+  </form>
+</div>
+<!--End Prosper-->
+
+<!--Start Funding Circle -->
+
+<div class="wrapperAccount" ng-show="FundingCircle">
+  <div>
+    <input type="image" class="backArrow" name="backArrowLc" src="/images/front/backArrow.png" ng-click="FundingCircle = false;accountClicked = false">
+  </div>
+  <form form-wizard="" role="form1" ng-submit="addPlatformLC(mp_fc)">
+    <div class="row">
+      <div class="col-md-6 col-lg-6 col-xs-8 col-sm-8 Img">
+        <img width="75%" src="/images/front/companies/fundingcircle.png">
+      </div>
+      <div class="col-md-6 col-lg-6 col-xs-4 col-sm-4 text-center">
+        <h4>
+          <em class="icon-question" ng-click="loadHelp('prosper')"></em>
+        </h4>
+        <div>
+          <a href="https://www.fundingcircle.com/us/investors/users/sign_in" target="_blank">Sign In</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row header3">
+      <div class="col-xs-12 text">
+        <h4>Please provide login credentials to automate trading with Funding Circle.</h4>
+      </div>
+    </div>
+    
+    <div class="row header2">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>EMAIL</p>
+         </div>
+         
+         <div class="row">
+          <input type="email" class="form-control ng-pristine ng-invalid ng-invalid-required ng-valid-email linkAccountText textMod" ng-model="mp_fc.fc_username" name="fcEmail" required="true" data-parsley-required-message="Please enter a valid email address." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>API ID</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText linkAccountText textMod" ng-model="mp_fc.fc_api_id"  name="fcAccountNum" required="true" data-parsley-required-message="Please enter a valid account number." placeholder="Required">
+         </div>
+      </div>
+    </div>
+    
+    <div class="row header2">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>PASSWORD</p>
+         </div>
+         
+         <div class="row">
+          <input type="password" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_fc.fc_password" name="fcPassword" required="true" data-parsley-required-message="Please enter a password." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>API PASSWORD</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="mp_fc.fc_api_password" name="fcApi" required="true" data-parsley-required-message="Please enter valid a valid API Key." placeholder="Required">
+         </div>
+      </div>
+    </div>
+
+  <div class="row header2">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center"><input type="submit" class="linkButton" name="linkAccountsFc" value="Link Account"></div>
+  </div>
+
+  </form>
+</div>
+<!--End Funding Circle-->
+</div>

@@ -1,0 +1,97 @@
+<h3>Add Market Place Platforms
+   <small>Available machine learning investment peer platforms.</small>
+</h3>
+<div ng-controller="accountsController" class="portlets-wrapper">
+  <div flash-alert="{{flash.type}}" active-class="in alert" class="fade">
+    <span class="alert-message">{{flash.message}}</span>
+  </div>
+<!-- START row-->
+<div class="row" ng-hide="accountClicked">
+   <div class="col-sm-8">
+      <!-- START panel-->
+      <div class="col-sm-4"></div>
+      <div class="col-sm-8">
+      	  <input type="text" class="searchBar" name="search" placeholder="Search for P2P Lender">
+      	   <input type="button" class="searchButton" value="Search">
+      </div>
+	  <div class="col-sm-4"></div>
+      <div class="col-sm-8">
+      	  <h4 id="header1">Or select from one of these Lending Institutions</h4>
+      </div>
+ 		<div class="row-fluid">
+	      		<div class="col-sm-1"></div>
+	      		<div class="col-sm-3">
+	      			<!--<img class="imageBox" src="/images/front/companies/lendingclub.jpg">-->
+	      			<input type="image" class="imageBox" src="/images/front/companies/lendingclub.jpg" name="lendingClub" ng-click="LendingClub = true;accountClicked = true">
+	      		</div>
+	      		<div class="col-sm-1"></div>
+	      		<div class="col-sm-3">
+	      			<!--<img class="imageBox" src="/images/front/companies/prosper.png">-->
+	      			<input type="image" class="imageBox" src="/images/front/companies/prosper.png" name="prosper" ng-click="accountClicked = true">
+	      		</div>
+	      		<div class="col-sm-1"></div>
+	      		<div class="col-sm-3">
+	      			<input type="image" class="imageBox" src="/images/front/companies/fundingCircle.png" name="temp" ng-click="accountClicked = true">
+	      			<!--<img class="imageBox" src="/images/front/companies/cn.png">-->
+	      		</div>
+	      </div>
+	      <div class="row" hidden="hidden">
+	      		<div class="col-sm-1"></div>
+	      		<div class="col-sm-3">
+	      			<input type="image" class="imageBox" src="/images/front/companies/cn.png" name="temp" ng-click="accountClicked = true">
+	      		</div>
+	      		<div class="col-sm-1"></div>
+	      		<div class="col-sm-3">
+	      			<input type="image" class="imageBox" src="/images/front/companies/cn.png" name="temp" ng-click="accountClicked = true">
+	      		</div>
+	      		<div class="col-sm-1"></div>
+	      		<div class="col-sm-3">
+	      			<input type="image" class="imageBox" src="/images/front/companies/cn.png" name="temp" ng-click="accountClicked = true">
+	      		</div>
+	      </div>      		
+      <!-- END panel -->
+   </div>
+    
+</div>
+<!-- END row-->
+<!--Start LendingClub-->
+<div class="row" ng-show="LendingClub" id="header2">
+	<div class="col-sm-6">
+	<h1>Link Your Account</h1>
+	</div>
+	<div class="col-sm-6" id="lcImg">
+		<img width="225" src="/images/front/companies/lendingclub.jpg">
+	</div>
+	<div class="col-sm-12" id="text">
+		<h4>Please provide login credentials so that we may automate your trading with Lending Club.</h4>
+	</div>
+	<div class="col-sm-6">
+		<p>EMAIL</p>
+	</div>
+	<div class="col-sm-6"></div>
+	<div class="col-sm-12">
+		<input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required ng-valid-email" name="lcEmail" required="true" data-parsley-required-message="Please enter valid email address." placeholder="Required">
+	</div>
+	<div class="col-sm-6">
+		<p>PASSWORD</p>
+	</div>
+	<div class="col-sm-6"></div>
+	<div class="col-sm-12">
+		<input type="password" class="form-control ng-pristine ng-invalid ng-invalid-required" name="lcPassword" required="true" data-parsley-required-message="Please enter a password." placeholder="Required">
+	</div>
+</div>
+<!--End LendingClub-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

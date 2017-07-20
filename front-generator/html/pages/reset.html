@@ -1,0 +1,36 @@
+<div ng-controller="ResetController" class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+      	<div class="panel-heading text-center">
+            <img style="width: 240px; height: 80px;" src="/images/front/ims_logo.png" alt="LendingCalc" class="img-responsive" />
+         </div>
+         <!--<a href="#">
+            <img src="app/img/logo.png" alt="Image" class="block-center img-rounded" />
+         </a>-->
+      </div>
+      <div class="panel-body">
+        <p class="text-center pv">Reset password..</p>
+        <form role="form" ng-submit="reset()" validate-form="" novalidate="" class="mb-lg">
+            <div class="form-group has-feedback">
+               <input id="password" type="password" placeholder="Enter password" autocomplete="off" ng-model="password" required="required" class="form-control" data-parsley-required-message="Please enter password." data-parsley-minlength="8" />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback">
+               <input id="confirm_password" type="password" placeholder="Enter confirm password" autocomplete="off" ng-model="cpassword" required="required" class="form-control" data-parsley-required-message="Please enter confirm password." data-parsley-equalto="#password" data-parsley-minlength="8"/>
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary mt-lg">Reset Password</button>
+         </form>
+         <div ng-show="authMsg" class="alert alert-danger text-center">{{authMsg}}</div>
+   </div>
+   <!-- END panel-->
+   <div class="p-lg text-center">
+      <span>&copy;</span>
+      <span ng-bind="app.year"></span>
+      <span>-</span>
+      <span ng-bind="app.name"></span>
+      <br/>
+      <span ng-bind="app.description"></span>
+   </div>
+</div>

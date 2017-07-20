@@ -1,0 +1,10 @@
+<html>
+<head><title>Logged In</title></head>
+<body>
+<script type="text/javascript">
+  var data = {email: '<%- user.email%>', token: '<%- user.token%>', display_name: '<%- user.displayName%>', id: '<%- user.id%>'};
+  opener.parent(data);
+  window.close();
+</script>
+</body>
+</html>

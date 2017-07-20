@@ -1,0 +1,67 @@
+<h3>Transactions
+   <small>Automated Investments based on Rules driven Portfolios</small>
+</h3>
+<!--
+<div ng-controller="TransactionsCtrl as table" class="container-fluid">
+   <div class="panel panel-default">
+      <table class="table ng-table-rowselected">
+        <thead>
+             <tr>
+                 <th><div style="text-align:center;"  class="ngCellText">Trade Date</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Account Name</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Rule Name</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Amount Requested</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Amount Invested</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Status</div></th>
+             </tr>
+        </thead>
+        <tbody>  
+         <tr ng-repeat="user in data" ng-click="user.$selected = !user.$selected; changeSelection(user)" ng-class="{'active': user.$selected}">
+            <td data-title="'Trade Date'"><div style="text-align:left;"  class="ngCellText">{{user.ms_tradeTimestamp  | date:'MM/dd/yyyy h:mma'}}</div></td>
+            <td data-title="'Account Name'"><div style="text-align:center;"  class="ngCellText">{{user.ms_accountId}}</div></td>
+            <td data-title="'Rule Name'"><div style="text-align:center;"  class="ngCellText">{{user.ms_ruleId}}</div></td>
+            <td data-title="'Amount Requested'"><div style="text-align:center;"  class="ngCellText">{{user.ms_requestedAmount | currency}}</div></td>
+            <td data-title="'Amount Invested'"><div style="text-align:center;"  class="ngCellText">{{user.ms_investedAmount | currency}}</div></td>
+            <td data-title="'Status'"><div style="text-align:left;"  class="ngCellText">{{user.ms_status}}</div></td>
+         </tr>
+        </tbody>    
+      </table>
+   </div>
+</div>
+-->
+
+
+<div ng-controller="NGTranTableCtrl as table" class="container-fluid double-up no-overlay" ng-class="{whirl: showTransactionsEmpty == false && showTransactions == false}" style="min-height: 300px;">
+    <!-- Filters Example-->
+    <div role="alert" ng-class="'alert-warning'" ng-show="showTransactionsEmpty" class="alert ng-isolate-scope alert-warning alert-dismissable" type="warning">
+      <div><span class="ng-binding ng-scope">No transactions available.</span></div>
+    </div>
+   <div class="panel panel-default" ng-show="showTransactions">
+      <div class="panel-heading"><a ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="transactions.csv" class="pull-right btn btn-sm btn-info">Export to CSV</a>
+         <div class="panel-title">Transactions History</div>
+      </div>
+      <table ng-table="table.tableParams" show-filter="true" export-csv="csv" class="table ng-table-rowselected">
+         <tbody>
+              <tr ng-repeat-start="user in $data track by $index" ng-click="loadCollapse($index)">
+                <td data-title="'Trade Date'" sortable="'ms_tradeTimestamp'" filter="{ 'ms_tradeTimestamp': 'text' }"><div style="text-align:left;"  class="ngCellText">{{user.ms_tradeTimestamp|date:'MM/dd/yyyy h:mma'}}</div></td>
+                <td data-title="'Account Name'" sortable="'accountName'" filter="{ 'accountName': 'text' }"><div style="text-align:center;"  class="ngCellText">{{user.accountName}}</div></td>
+                <td data-title="'Rule Name'" sortable="'ms_ruleId'" filter="{ 'ms_ruleId': 'text' }"><div style="text-align:center;"  class="ngCellText">{{user.ms_ruleId}}</div></td>
+                <td data-title="'Amount Requested'" sortable="'ms_requestedAmount'" filter="{ 'ms_requestedAmount': 'text' }"><div style="text-align:center;"  class="ngCellText">{{user.ms_requestedAmount | currency}}</div></td>
+                <!--<td data-title="'Amount Invested'" sortable="'ms_investedAmount'" filter="{ 'ms_investedAmount': 'text' }"><div style="text-align:center;"  class="ngCellText">{{(user.ms_investedAmount ? user.ms_investedAmount : 0.00) | currency}}</div></td>-->
+                <td data-title="'Status'" sortable="'ms_status'" filter="{ 'ms_status': 'text' }"><div style="text-align:left;"  class="ngCellText">{{user.ms_status}}</div></td>
+             </tr>
+
+             <tr ng-repeat-end>
+              <td colspan="6" class="noPadding"><div class="accordian-body" ng-show="sIndex == $index" id="row-{{$index}}">Transaction Details</div></td>
+             </tr>
+<!--
+             <tr ng-repeat="user in $data">
+               <td data-title="'Name'" sortable="'ms_status'" filter="{ 'user.ms_status': 'text' }">{{user.ms_status}}</td>
+               <td data-title="'Status'" sortable="'ms_status'" filter="{ 'user.ms_status': 'text' }">{{user.ms_status}}</td>
+            </tr>
+-->
+         </tbody>
+      </table>
+   </div>
+   
+</div>

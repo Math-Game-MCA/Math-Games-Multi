@@ -1,0 +1,10 @@
+#!/bin/bash 
+# Sync all assets 
+ 
+cp -r assets/vendor/* vendor 
+cp -r vendor/* assets/vendor 
+cp -r assets/vendor/* bower_components 
+cp -r bower_components/* assets/vendor 
+cp -r bower_components/* vendor 
+ 
+echo "All synced up!"

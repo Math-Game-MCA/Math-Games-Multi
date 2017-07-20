@@ -1,0 +1,230 @@
+/* ========================================================================
+   Component: add-account.less
+ ========================================================================== */
+
+// Variables
+// ========================================================================
+
+@searchBarColor: rgba(50, 50, 50, 0.2);
+@searchButtonColor: #207cca;
+@deleteButtonColor: #ff1744;
+@defaultRadius:15px;
+@defaultShift: 7px;
+
+.RoundedShape(@radius:@defaultRadius){
+    -webkit-border-radius:@radius;
+       -moz-border-radius:@radius;
+            border-radius:@radius;  
+}
+
+.ShiftTextLeft(@shift:defaultShift){
+	margin-left: @shift;
+}
+
+.textMod {
+	padding: 8px 15px;
+	background: @searchBarColor;
+	border: 0px solid #dbdbdb;
+
+  &:focus{
+  	outline:none;
+  }
+}
+
+.wrapperAccount{
+	//.ShiftTextLeft(5%);
+	background: none repeat scroll 0 0;
+ 	//max-width:100%;
+ 	//min-width: 600px;
+    //max-height:1000%;
+ 	//min-height: 100%;
+ 	white-space: nowrap
+}
+
+.searchBar{
+	width: 400px;
+	padding: 8px 15px;
+	background: @searchBarColor;
+	border: 0px solid #dbdbdb;
+} 
+
+.searchButton{
+	position: relative;
+	padding: 6px 15px;
+	left:-8px;
+	border:2px solid @searchButtonColor;
+	background-color: @searchButtonColor;
+	color:#fafafa;
+	&:hover{
+		background-color:#fafafa;
+        color:#207cca; 
+	}
+}
+
+.imageBox{
+	margin: 2%;
+	border:2px solid @searchBarColor;
+	.RoundedShape();
+	width: 100%;
+	//display: inline-block;
+	float: left;
+}
+
+
+.imageClass{
+	.ShiftTextLeft(10%);
+}
+
+.linkAccountText{
+	width: 98%;
+}
+
+.linkButton{
+	//margin-right: -6%;
+	//float: right;
+	margin-top: 10%;
+	border:2px solid @searchButtonColor;
+	background-color: @searchButtonColor;
+	color:#fafafa;
+	min-width: 100px;
+	width: 25%;
+	height: 40px;
+	&:hover{
+		background-color:#fafafa;
+        color:@searchButtonColor;
+	}
+}
+
+.deleteButton{
+	//margin-right: -6%;
+	float: right;
+	margin-bottom: 5%;
+	border:2px solid @deleteButtonColor;
+	background-color: @deleteButtonColor;
+	color:#ffebee;
+	min-width: 100px;
+	width: 25%;
+	height: 40px;
+	&:hover{
+		background-color:#ffebee;
+        color:@deleteButtonColor;
+	}
+}
+
+.shiftBox{
+	.ShiftTextLeft(-15%);
+}
+
+.shiftBox2 {
+	.ShiftTextLeft(15%);
+}
+
+.shiftBox3{
+	.ShiftTextLeft(-11%);
+}
+
+
+
+.header1{
+	.ShiftTextLeft(25%);
+	white-space: normal;
+}
+
+
+
+.Img{
+	//.ShiftTextLeft(15%);
+  padding-left: 0px;
+	padding-right: 10%;
+
+}
+.header2{
+	//.ShiftTextLeft(10%);
+	padding-top: 10px;
+}
+.header3{
+	.ShiftTextLeft(25%);
+	padding-top: 10px;
+}
+
+.text{
+	//.ShiftTextLeft(-20%);
+	padding-top: 0%;
+	white-space: normal;
+}
+
+.accountText{
+	left: 60px;
+}
+
+.passwordText{
+	margin-top: 20px;
+}
+
+.apiText{
+	margin-top: 20px;
+	left: -290px;
+
+
+}
+
+.AccountNum{
+	margin-left: -60px;
+}
+
+.Api{
+	margin-left: -60px;
+}
+
+@media (max-width: 767px) {
+  .backArrow{
+    height: 50px;
+  }
+  
+  .shift-help {
+    padding-right: 10%;
+  }
+}
+
+@media (min-width: 768px) {
+  .backArrow{
+    height: 50px;
+  }
+  
+  .shift-help {    
+    padding-right: 10%;
+   
+  }
+}
+
+@media (min-width: 992px) {
+  .backArrow{
+    height: 50px;
+   // margin-left: 100px;
+  }
+  
+  .shift-help{
+    .ShiftTextLeft(-15%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .backArrow{
+    height: 50px;
+    //margin-left: 100px;
+  }
+  
+  .shift-help{
+    .ShiftTextLeft(-15%);
+  }
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  
+}
+
+.padding-left-0 {
+  padding-left: 0px!important;
+}

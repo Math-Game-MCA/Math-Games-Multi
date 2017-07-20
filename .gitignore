@@ -1,0 +1,14 @@
+bower_components/
+node_modules/
+.tmp/
+vendor/
+assets/documentation
+assets/js
+config/globals.js
+config/routes.js
+config/local.js
+api/data/
+*.csv
+views/analytics/
+.Rproj.user
+/testresults/

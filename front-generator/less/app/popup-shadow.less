@@ -1,0 +1,36 @@
+.popupModal-dialog {
+  z-index: 9999;
+  position: absolute;
+  float: right;
+  width: 40%;
+  margin: 40px 40px;
+}
+
+.popupModal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: none;
+}
+
+.popupModal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  background-color: #000000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.popupModal-body {
+  position: relative;
+  padding: 20px;
+}

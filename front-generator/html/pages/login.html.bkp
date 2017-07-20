@@ -1,0 +1,152 @@
+<<<<<<< HEAD
+<div ng-controller="LoginFormController" class="block-center mt-xl wd-xl">
+    <toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+
+         <div class="panel-heading text-center">
+            <img style="width: 280px; height: 80px;" src="/images/front/ims_logo.png" alt="LendingCalc" class="img-responsive" />
+         </div>
+         <!--<a href="#">
+            <img src="app/img/logo.png" alt="Image" class="block-center img-rounded" />
+         </a>-->
+      </div>
+      <div class="panel-body">
+        
+        <div ng-show="view == 'login'">
+         <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+         <form role="form" ng-submit="login()" validate-form="" novalidate="" class="mb-lg">
+            <div class="form-group has-feedback">
+               <input id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" ng-model="account.username" required="required" class="form-control" data-parsley-required-message="Please enter valid email address." />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback">
+               <input id="exampleInputPassword1" type="password" placeholder="Password" ng-model="account.password" required="required" class="form-control" data-parsley-required-message="Please valid password." />
+               <span class="fa fa-lock form-control-feedback text-muted"></span>
+            </div>
+            <div class="clearfix">
+               <div class="checkbox c-checkbox pull-left mt0">
+                  <label>
+                     </label>
+               </div>
+               <div class="pull-right"><a href="#" ng-click="loadInstance('forgot-password')">Forgot your password?</a>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary mt-lg">Login</button>
+         </form>
+	     <div ng-show="authMsg" class="alert alert-danger text-center">{{authMsg}}</div>
+	     <div hidden="hidden">
+	         <p class="pt-lg text-center">Need to Signup?</p><a ui-sref="page.register" class="btn btn-block btn-default">Register Now</a>
+	         <button ng-click="social()" class="btn btn-block btn-social btn-google" type="button">
+	          <span class="fa fa-google-plus"></span>
+	          Google
+	        </button>
+	        <button ng-click="linkedin()" class="btn btn-block btn-social btn-linkedin" type="button">
+	          <span class="fa fa-linkedin"></span>
+	          Linkedin
+	        </button>
+        </div>
+        </div>
+        <div ng-show="view == 'forgot-password'">
+          <p class="text-center pv">Recover password..</p>
+         <form role="form" ng-submit="recover(username)" validate-form="" novalidate="" class="mb-lg">
+            <div class="form-group has-feedback">
+               <input id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" ng-model="username" required="required" class="form-control" data-parsley-required-message="Please enter valid email address." />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="clearfix">
+               <div class="pull-right"><a href="#" ng-click="loadInstance('login')" class="text-muted">Login</a>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary mt-lg">Recover</button>
+         </form>
+         <div ng-show="authMsg" class="alert alert-danger text-center">{{authMsg}}</div>
+        </div>
+   </div>
+   <!-- END panel-->
+   <div class="p-lg text-center">
+      <span>&copy;</span>
+      <span ng-bind="app.year"></span>
+      <span>-</span>
+      <span ng-bind="app.name"></span>
+      <br/>
+      <span ng-bind="app.description"></span>
+   </div>
+=======
+<div ng-controller="LoginFormController" class="block-center mt-xl wd-xl">
+    <toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+   <!-- START panel-->
+   <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+
+         <div class="panel-heading text-center">
+            <img style="width: 280px; height: 80px;" src="/images/front/ims_logo.png" alt="LendingCalc" class="img-responsive" />
+         </div>
+         <!--<a href="#">
+            <img src="app/img/logo.png" alt="Image" class="block-center img-rounded" />
+         </a>-->
+      </div>
+      <div class="panel-body">
+        
+        <div ng-show="view == 'login'">
+         <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+         <form role="form" ng-submit="login()" validate-form="" novalidate="" class="mb-lg">
+            <div class="form-group has-feedback">
+               <input id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" ng-model="account.username" required="required" class="form-control" data-parsley-required-message="Please enter valid email address." />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback">
+               <input id="exampleInputPassword1" type="password" placeholder="Password" ng-model="account.password" required="required" class="form-control" data-parsley-required-message="Please valid password." />
+               <span class="fa fa-lock form-control-feedback text-muted"></span>
+            </div>
+            <div class="clearfix">
+               <div class="checkbox c-checkbox pull-left mt0">
+                  <label>
+                     </label>
+               </div>
+               <div class="pull-right"><a href="#" ng-click="loadInstance('forgot-password')">Forgot your password?</a>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary mt-lg">Login</button>
+         </form>
+	     <div ng-show="authMsg" class="alert alert-danger text-center">{{authMsg}}</div>
+	     <div hidden="hidden">
+	         <p class="pt-lg text-center">Need to Signup?</p><a ui-sref="page.register" class="btn btn-block btn-default">Register Now</a>
+	         <button ng-click="social()" class="btn btn-block btn-social btn-google" type="button">
+	          <span class="fa fa-google-plus"></span>
+	          Google
+	        </button>
+	        <button ng-click="linkedin()" class="btn btn-block btn-social btn-linkedin" type="button">
+	          <span class="fa fa-linkedin"></span>
+	          Linkedin
+	        </button>
+        </div>
+        </div>
+        <div ng-show="view == 'forgot-password'">
+          <p class="text-center pv">Recover password..</p>
+         <form role="form" ng-submit="recover(username)" validate-form="" novalidate="" class="mb-lg">
+            <div class="form-group has-feedback">
+               <input id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" ng-model="username" required="required" class="form-control" data-parsley-required-message="Please enter valid email address." />
+               <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="clearfix">
+               <div class="pull-right"><a href="#" ng-click="loadInstance('login')" class="text-muted">Login</a>
+               </div>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary mt-lg">Recover</button>
+         </form>
+         <div ng-show="authMsg" class="alert alert-danger text-center">{{authMsg}}</div>
+        </div>
+   </div>
+   <!-- END panel-->
+   <div class="p-lg text-center">
+      <span>&copy;</span>
+      <span ng-bind="app.year"></span>
+      <span>-</span>
+      <span ng-bind="app.name"></span>
+      <br/>
+      <span ng-bind="app.description"></span>
+   </div>
+>>>>>>> e74c42741c618bc740427f63bd614fd27690e0de
+</div>

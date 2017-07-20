@@ -1,0 +1,172 @@
+<h3>
+  Accounts
+  <small>Automated Investment Rules</small>
+  <input type="submit" class="credsButton col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center" style="margin-bottom: 1%" name="updateAccountVar" value="Update Account" ng-click="updateAccountVar = true;updateAccountReset = false; showModal = 0;" ng-hide="updateAccountVar">
+<!--   <input type="submit" class="linkButton" name="rulesButton" value="Update Rules" ng-click="updateAccountVar = false" ng-show="updateAccountVar"> -->
+</h3>
+
+<!--Start rules-->
+<div class="panel panel-default" ng-controller="RulesController" style="padding:5px;" ng-hide="updateAccountVar" ng-show="updateAccountReset">
+  <div flash-alert="{{flash.type}}" active-class="in alert" class="fade">
+    <span class="alert-message">{{flash.message}}</span>
+  </div>
+  <toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+  <div>
+    <fieldset data-ng-repeat="rule in rules track by $index">
+        <div class="col-lg-12 col-md-12 text-muted">
+          Priority #{{$index + 1}}
+        </div>
+        <div class="col-lg-12 col-md-12">
+          <h3 style="margin-top: 0px;">{{rule.ruleName}}</h3>
+        </div>
+
+        <div class="col-lg-12 col-md-12 text-muted">
+          <p>{{rule.default_text}}</p>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="btn-group">
+            <button class="btn btn-default btn-lg ng-pristine ng-untouched ng-valid" ng-click="update(rule.id)">Edit</button>
+            <button class="btn btn-default btn-lg ng-pristine ng-untouched ng-valid" ng-click="duplicate(rule.id)">Duplicate</button>
+            <button class="btn btn-default btn-lg ng-pristine ng-untouched ng-valid" ng-click="setPriority($index, 'down')" ng-hide="$index == (rules.length - 1)"><i class="fa fa-arrow-down"></i></button>
+            <button class="btn btn-default btn-lg ng-pristine ng-untouched ng-valid" ng-click="setPriority($index, 'up')" ng-hide="$index == 0"><i class="fa fa-arrow-up"></i></button>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-right">
+          <div class="btn-group">
+            <button class="btn btn-default btn-lg ng-pristine ng-untouched ng-valid" ng-class="{'btn-danger': rule.status == true, 'btn-green': rule.status == false}" ng-click="updateStatus(rule.id, rule.status)">{{rule.status ? 'Suspend' : 'Activate'}}</button>
+            <button class="btn btn-default btn-lg ng-pristine ng-untouched ng-valid" ng-click="remove(rule.id)">Delete</button>
+          </div>
+        </div>
+    </fieldset>
+  </div>
+
+  <div class="row" data-ng-hide="rules.length" style="padding:5px;">
+    <div class="col-lg-12 col-md-12" style="padding-top:10px; padding-bottom:40px;">
+      You do not have any rules defined. Please add your Investment Strategy.
+    </div>
+  </div>
+
+  <div class="row"  style="padding:5px;">
+    <div class="col-lg-12 col-md-12">
+      <h2>Add a new rule</h2>
+    </div>
+
+    <div hidden="hidden" class="col-lg-6 col-md-6">
+      <button class="btn btn-default" type="button" ng-click="addRules('lc')"><i class="fa fa-plus"></i></button> <strong>LendingCalc Model</strong>
+    </div>
+
+    <div class="col-lg-6 col-md-6">
+      <button class="btn btn-default" type="button" ng-click="addRules('blank')"><i class="fa fa-plus"></i></button> Blank
+    </div>
+  </div>
+</div>
+<!--End rules-->
+
+  <div>
+    <input type="image" class="backArrow" name="backArrowUpdate" src="/images/front/backArrow.png" ng-show="updateAccountVar" ng-click="updateAccountVar = false; updateAccountReset = true;">
+  </div>
+
+<!--Start credentials-->
+<div class="panel panel-default" ng-controller="RulesController" style="padding:5px;"  ng-show="updateAccountVar">
+  <div flash-alert="{{flash.type}}" active-class="in alert" class="fade">
+    <span class="alert-message">{{flash.message}}</span>
+  </div>
+   <form form-wizard="" role="formUpdateCredentials" ng-submit="renameAccount(up_name)">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>ENTER NAME TO RENAME ACCOUNT</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="up_name.name" name="upName" required="true" data-parsley-required-message="Name has to be at least 1 character long" placeholder="Required">
+         </div>
+      </div>
+    <div class="row header2">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center"><input type="submit" class="linkButton" name="updateAccountVarButton" value="Rename Account"></div>
+    </div>
+   </form>
+
+  <form form-wizard="" role="formUpdateCredentials" ng-submit="updateAccount(up_acc)">
+    
+    <div class="row header2">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>CLIENT ID</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="up_acc.vendorAccountId"  name="upAccountNum" required="true" data-parsley-required-message="Please enter a valid account number." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>CLIENT SECRET</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="up_acc.vendorAPIKey" name="upApi" required="true" data-parsley-required-message="Please enter valid a valid API Key." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="row">
+         <p>USERNAME</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="up_acc.vendorUserName"  name="upUsername" required="true" data-parsley-required-message="Please enter a valid username." placeholder="Required">
+         </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+         <div class="row">
+         <p>PASSWORD</p>
+         </div>
+         
+         <div class="row">
+          <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="up_acc.vendorPassword" name="upPassword" required="true" data-parsley-required-message="Please enter valid password." placeholder="Required">
+         </div>
+      </div>
+    </div>
+
+  <div class="row header2">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center"><input type="submit" class="linkButton" name="updateAccountVarButton" value="Update Account"></div>
+  </div>
+
+  </form>
+</div>
+
+<div class="panel panel-default" ng-controller="RulesController" style="padding:5px; border: 2px solid #ff1744;"  ng-show="updateAccountVar">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+         <div class="row">
+            <p style="color:#ff1744; font-size: 250%; margin-top: 15%;"><strong>DANGER ZONE</strong></p>
+         </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+         <div class="row" style="margin-top: 10%">
+            <p>PRESS THIS BUTTON ONLY TO DELETE THIS ACCOUNT AND ALL ASSOCIATED RULES</p>
+         </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11 text-center"><button ng-click="showModal=1;" class="deleteButton">Delete Account</button>
+        <div id="popupBackGround" class="popupModal-backdrop" ng-if="showModal"></div>
+         <div id="popupBackGroundDialog" class="popupModal-dialog" ng-show="showModal">
+        <div class="popupModal-content">
+          <div class="popupModal-body">
+            <p style="margin-left: 20px;">Please type the name of the account you are about to delete</p>
+            <form form-wizard=""  role="formDelete" ng-submit="deleteAccount(del)">
+                <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required linkAccountText textMod" ng-model="del.accountName"  name="delAccountName" required="true" data-parsley-required-message="Please enter a valid username." placeholder="Required">
+              <input type="submit" class="deleteButton" name="confirmDelete" value="Delete Account">
+            </form>
+            <button ng-click="showModal=0;">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+<!--End credentials-->

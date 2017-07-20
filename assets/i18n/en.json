@@ -1,0 +1,44 @@
+{
+  "dashboard": {
+    "WELCOME": "Welcome to {{appName}}"
+  },
+  "topbar": {
+    "messages": {
+      "UNREAD": "Unread messages",
+      "MORE": "More messages"
+    },
+    "search": {
+      "PLACEHOLDER": "Type and hit enter.."
+    },
+    "notification": {
+      "MORE": "More notifications"
+    }
+  },
+  "sidebar": {
+    "WELCOME": "Welcome",
+    "heading": {
+      "DASHBOARD": "Dashboard",
+      "PEER_PLATFORMS": "Peer Platforms",
+      "RESOURCES": "Resources"
+    },
+    "nav": {
+      "DASHBOARD_SUMMARY": "Summary",
+      "DASHBOARD_TRANSACTIONS": "Transactions",
+      "FAQs": "FAQs",
+      "account": {
+        "ACCOUNTS": "Accounts",
+        "ACCOUNT_1": "Prosper # 1",
+        "ADD_ACCOUNT": "Add Account"
+      },
+      "pages": {
+        "PAGES": "Blogs",
+        "LOGIN": "Login",
+        "REGISTER": "Register",
+        "RECOVER": "Recover password",
+        "PROFILE": "Profile",
+        "LOCK": "Lock",
+        "STARTER": "Starter Template"
+      }
+    }
+  }
+}

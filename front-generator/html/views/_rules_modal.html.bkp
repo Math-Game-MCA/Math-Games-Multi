@@ -1,0 +1,96 @@
+
+     <div data-ng-repeat="rule in accountRules track by $index" ng-init="sectionIndex = $index">
+     <!-- START panel-->
+      <form method="get" class="form-horizontal form-custom">
+      <div class="panel panel-green">
+         <div class="panel-heading bg-green-dark">  
+             <em class="icon-arrow-up" ng-click="setPriority(sectionIndex, 'up')" style="cursor: pointer;"></em>
+             <em class="icon-arrow-down" ng-click="setPriority(sectionIndex, 'down')" style="cursor: pointer;"></em>
+             {{rule.ruleName}}
+             <em ng-class="{'fa':true, 'fa-check':rule.active, 'fa-plus-square':!rule.active}" style="cursor: pointer;" ng-click="rule.active=!rule.active" ></em>
+             <em class="fa fa-ban" ng-click="deleteRule($index)" style="cursor: pointer;"></em>
+         </div>
+         <div class="panel-body">
+            <fieldset>
+                <div class="row">
+                   <div class="col-lg-4 col-md-6">
+                    <label>Execution Start Time:</label><br />
+                    
+                   </div>
+                   <div class="col-lg-4 col-md-6">
+                    <label>Execution End Time:</label><br />
+                   </div>
+                </div>
+                <div class="form-group">
+                   <label class="col-sm-12">Amount Per Loan (Must be increments of $25)</label>
+                </div>
+
+                <div class="form-group">
+                   <div class="col-sm-4 custom-input">
+                      <div class="col-sm-4">
+                        <div class="col-sm-2">
+                        $
+                        </div>
+                        <div class="col-sm-10">
+                          <input type="number" ng-model="rule.minTradeAmount" step="25" min="0">
+                        </div>
+
+                      </div>
+                      <div class="col-sm-2">
+                        To
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-10">
+                          <input type="number" ng-model="rule.maxTradeAmount" step="25" min="0">
+                        </div>
+                      </div>
+                   </div>
+                </div>
+
+                <div class="custom_filters" data-ng-repeat="filter in rule.filters">
+                  <div class="form-group">
+                     <label class="col-sm-4" for="filter" ng-model="filter.id"> 
+                      <em class="fa fa-minus-circle" ng-click="removefilter($parent.$index,$index)"></em> {{filter.name}} <em class="icon-question"></em>
+                     </label>
+
+                     <label class="col-sm-8 text-right" for="filterdesc" ng-bind="loadValues(filter)"></label>    
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-sm-12 slim-slider" ng-if="loadSlider(filter, 'slider')">
+                        <custom-slider id="{{loadSliderData(sectionIndex, $index, 'id')}}" data-slider-id="{{loadSliderData(sectionIndex, $index, 'id')}}" data-slider-min="{{filter.min}}" data-slider-max="{{filter.max}}" data-slider-step="{{filter.step}}" data-slider-value="{{filter.value}}" data-slider-orientation="horizontal"></custom-slider>
+                     </div>
+                     <div class="col-sm-12 slim-slider" ng-if="loadSlider(filter, 'selection')">
+                        <div data-ng-repeat="(k, v) in filter.list" style="float: left;">
+                          <button type="button" class="btn btn-labeled" ng-class="{'btn-green': (accountRules[sectionIndex].filters[$parent.$index]['value'].indexOf(k) >= 0), 'btn-default': (accountRules[sectionIndex].filters[$parent.$index]['value'].indexOf(k) < 0)}" ng-click="setSelectionValues(sectionIndex, $parent.$index,$index, k)">{{k}}</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                     </div>
+                  </div>
+                </div>
+
+                 <div class="panel-body">
+                  <label data-ng-repeat="button in rule.buttons"  ng-hide="button.hide">
+                            <!-- Success button with label -->
+                            <button type="button" class="btn btn-labeled btn-green btn-xs" ng-click="addfilter($parent.$index,$index)">
+                               <span class="btn-label"><i class="fa fa-plus"></i>
+                               </span>{{button.name}}
+                            </button>&nbsp;&nbsp;&nbsp;
+                  </label>
+                </div>
+                
+             </fieldset>
+         </div>
+         <div class="panel-footer">
+                <button type="button" class="btn btn-labeled btn-green btn-l" ng-click="saveRule($index)">Save</button>
+                <button type="button" class="btn btn-labeled btn-default btn-l" ng-click="cancelRule($index)">Cancel</button>
+         </div>
+      </div>
+      </form>
+      <!-- END panel-->
+      </div>
+     
+       </div>
+        <div class="row" style="text-align: center; padding:5px;">
+        <button type="button" class="btn btn-labeled btn-green btn-l" ng-click="addRule()"  ng-hide="accountRules.length == 3">Add new rule</button>
+      </div>

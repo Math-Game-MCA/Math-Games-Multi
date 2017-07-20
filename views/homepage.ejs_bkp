@@ -1,0 +1,775 @@
+html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Automated Investing marketplace Platform">
+    <meta name="keywords" content="IDX, Peer, P2P, Marketplace, machine learning, fintech, Peer2Peer, Lending, RoboAdvisor, Trading">
+    <meta name="author" content="IDX Master">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>LendingCalc - Marketplace Lending Order Management System</title>
+    <link rel="icon" href="https://stagingapp.lendingcalc.com/images/front/favicons/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:300,600,400' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/animate.min.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/icons/icons.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/owl.theme.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/owl.carousel.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/nivo-lightbox.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/nivo_themes/default/default.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/styles.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/responsive.css">
+    <link rel="stylesheet" href="https://stagingapp.lendingcalc.com/styles/front/colors/green2.css">
+     <script type="text/javascript">
+      var api_host_url = 'https://stagingapp.lendingcalc.com/';
+     </script>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="status">
+            &nbsp;
+        </div>
+    </div>
+
+
+    <header class="header" data-stellar-background-ratio="0.5" id="home">
+
+        <div class="overlay-layer">
+
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stamp-navigation">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-grid-2x2"></span>
+                        </button>
+
+                        <a href="#/"> <img style="width: 220px; height: 55px;" src="https://stagingapp.lendingcalc.com/images/front/ims_logo_clear.png" class="img-responsive" />
+                        </a>
+
+        
+                        
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+
+                        <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                            <li><a href="#services">Services</a>
+                            </li>
+                            <li><a href="#FAQs">FAQs</a>
+                            </li>
+                            <li><a href="#strategies">Strategies</a>
+                            </li>
+                            <!-- <li>
+                                <a target="_blank" href="https://blog.LendingCalc.com">Blog</a>
+                            </li> -->
+                            </li>
+                        </ul>
+
+                        
+                        <ul class="nav navbar-nav navbar-right login-register small-text">
+                            <li class="login js-login"><a href="https://stagingapp.lendingcalc.com/app" class="navbar-register-button external">Client Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 text-left">
+
+                        <div class="intro-section">
+
+                            <h2 class="intro white-text">A Marketplace Lending Order Management System</h2>
+                            
+                            <p class="transparent-text">Access credit research, analytics and accurate data needed to efficiently run your business with Lending Calc’s suite of flexible and scalable investment management solutions.</p>
+                            
+                            <div class="button hidden-xs">
+                                <a href="#services" class="btn btn-primary secondary-button">Learn More</a>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5 pull-right">
+                        
+                        <div class="vertical-registration-form">
+                            <form class="registration-form" id="contact-form">
+                                
+                                <input type="text" id="cf-name" name="name" class="form-control input-box" placeholder="Enter your Name">
+                                
+                                <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Enter your Email">
+                                
+                                <textarea name="message" id="cf-message" class="form-control textarea-box" rows="4" placeholder="Enter your Message"></textarea>
+                                
+                                <button class="btn btn-primary standard-button">Contact Us</button>
+                                
+                            </form>
+                            
+                            <p class="email-success dark-text small-text"><span class="icon-check-alt2 colored-text"></span>Thank you for contacting us. We will speak to you soon.</p>
+                            <p class="email-error dark-text small-text"><span class="icon-close-alt2"></span>Validation Error! Please enter valid Name, Email or Message. Thank you!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="services grey-bg" id="services">
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2 class="dark-text"><strong>How We Help?</strong></h2>
+                <div class="colored-line">
+                </div>
+                <div class="sub-heading">
+                    <p>Social marketplace lending has grown beyond its simple “peer to peer” beginnings and is quickly becoming a new asset class. As this space continues to grow, investors are faced with the challenge of how to intelligently and efficiently allocate capital to this asset class.</p>
+
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 wow fadeInLeft" data-wow-offset="10" data-wow-duration="1.75s">
+                    <div class="single-service border-bottom-hover">
+                        <div class="service-icon colored-text">
+                            <span class="icon-basic-webpage-multiple"></span>
+                        </div>
+                        <h3 class="colored-text">Competitive Speed</h3>
+                        <p>
+                            Large hedge funds and banks have been winning the arms race with automatic software that snatches up most loans within seconds of their release by the loan originators. Manual investors are left with second-rate choices. LendingCalc is the automated, super-fast tool that allows its users to compete with the rest of Wall Street.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow flipInY" data-wow-offset="10" data-wow-duration="1s">
+                    <div class="single-service border-bottom-hover">
+                        <div class="service-icon colored-text">
+                            <span class="icon-ecommerce-graph3"></span>
+                        </div>
+                        <h3 class="colored-text">Confident Selection</h3>
+                        <p>
+                            Numerous filtering options, including the unique ‘popularity’ criterion and a sophisticated machine-learning algorithm allow users to automatically select the loans with the highest expected returns.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInRight" data-wow-offset="10" data-wow-duration="1.75s">
+                    <div class="single-service border-bottom-hover">
+                        <div class="service-icon colored-text">
+                            <span class="icon-basic-geolocalize-05"></span>
+                        </div>
+                        <h3 class="colored-text">Constant Re-investing</h3>
+                        <p>
+                            Investing in marketplace lending is time-consuming, because payments have to be continuously re-invested while meeting ongoing diversification and risk metric requirements. LendingCalc automates the entire process.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="brief grey-bg text-left" id="FAQs">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 content-section wow fadeInRight" data-wow-offset="20" data-wow-duration="1.75s">
+                    <h2 class="text-left dark-text"><strong>Frequently Asked Questions</strong></h2>
+                    <div class="colored-line-left">
+                    </div>
+                    <p class="text-left">
+                        This section includes Frequently Asked Questions related to LendingCalc's services. Click on the questions below to expand the answers.
+                    </p>
+
+                    <div class="panel-group" id="accordion">
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" id="headingOne">
+                                <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">What is the criteria for Loan Selection?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    Boost your investment returns using our exclusive risk models to determine high quality loan filters. Based on extensive research, we have identified pockets of inefficiencies in the loan grading models that lead to additional net returns. We use available and custom default risk factors to pick the best performing loans using the following guiding principles:
+Focus on causation factors for risk instead of correlation to ensure that our models are statistically and fundamentally sound.
+Prioritize on the best-of-the-best loans per loan grade, which currently results in a rejection rate of over 90% of new loans.
+Continuously optimize our selection models on a quarterly basis to ensure high performance and adjust for changing environments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" id="headingTwo">
+                                <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">How does Trade Execution happen automatically?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Completely automate the investment process using intelligent trade execution at a high level of sophistication. Our trade execution engine gives you the following edge:
+Speed – Start-to-finish of all processes within seconds
+Portfolio, Strategy Integration – Trade only the right loans for the strategy chosen for the account
+Diversification, – Automatic trade sizing based on account size to ensure diversification in your account
+Position, Sizing – Larger position sizes for the best-of-the-best loans
+Portfolio, Grade Optimization – Dynamically trade loan grades to match desired strategy’s portfolio grade distribution targets
+Liquidity, Priority – Trade prioritization based on account cash ratio to minimize cash drag
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" id="headingThree">
+                                <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">Is there any Portfolio Optimization used?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Perpetually optimize your portfolio to ensure that performance is not only tracked, but also improved over time based on new market information. We track a variety of your portfolio metrics and compare against internal benchmarks to validate and optimize our added value services. This results in high quality control on our added value as a investment technology service. The benchmarks monitored include:
+Overall portfolio returns against industry averages to determine excess returns (alpha)
+Expected vs. actual default rates (determine excess returns due to our services)
+Actual vs. expected portfolio loan grade distribution
+Reinvestment leverage (determine leverage in returns due to reinvested profits)
+Diversification requirements (relative to portfolio strategy)
+Cash drag impact
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="panel panel-default">
+
+                        <div class="panel-heading" id="heading4">
+                                <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">How do I get started with LendingCalc?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                                <div class="panel-body">
+                                    Add marketplace accounts to your personalized  portal in LendingCalc and the application will sync automatically to set you up with all the portfolio information that you can see after you login.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" id="heading5">
+                                <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">How much idle cash will I have in my account?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                                <div class="panel-body">
+                                    We typically see about 0.10% of your account with idle cash when using our service at any moment. This is mostly limited by the minimum order size of $25 per loan. Our trading system automatically scales the size of a loan for your account based on your portfolio's cash-to-account value ratio, account value, and portfolio strategy. If trades for your portfolio any time there is enough cash available for a single loan.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" id="heading6">
+                                <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">How long will it take to fully allocate loans my initial portfolio?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <!-- ACORDIION DESCRIPTION / TEXT -->
+                            <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                                <div class="panel-body">
+                                Depending on which strategy you choose as well as loan availability and loan selection rates, we target 3-4 weeks to fully allocate your initial portfolio with 400-600 loans. The Conservative strategy typically is easier and faster to fully allocate while the Aggressive strategy may take significantly longer. This timetable should improve as Marketplace lending originations rate expands in size in the future.</div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- SINGLE ACORDIION -->
+                        <div class="panel panel-default">
+
+                            <!-- ACORDIION HEADING / TITLE -->
+                            <div class="panel-heading" id="heading7">
+                                <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <span class="icon-container color-bg"><span class="icon-compass-alt white-text"></span></span><span class="title-text">What is your technology security infrastructure?</span>
+                        </a>
+                        </h4>
+                            </div>
+
+                            <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                                <div class="panel-body">
+                                We are serious about data privacy and service redundancy. Therefore, we designed our technology with security in mind.
+Firewall & Multi-layered security protocols: External access to LendingCalc master database limited by IP range, administrator credentials, and encryption keys
+Nightly server code and database drive backup
+Virtual server instance cloning and backups for fast emergency reboots
+Server instances in multiple geographic locations
+Fast and reliable internet connectivity: 500/300 Mbps up/down speeds hosted by Cloud Infrastructure with priority bandwidth</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" id="strategies" data-stellar-background-ratio="0.5">
+        <div class="overlay-layer-2">
+            <div class="container">
+                <div class="row no-gutters">
+
+                    <!-- SINGLE COLUMN WITH ICON -->
+                    <div class="col-md-4 col-sm-4 col-xs-4 single-stats wow fadeInLeft" data-wow-offset="10" data-wow-duration="1.75s">
+                        <div class="icon-container">
+                            <span class="colored-text icon-basic-elaboration-calendar-check"></span>
+                        </div>
+                        <h4 class="white-text">10% - 12%</h4>
+                        <p class="uppercase transparent-text small-text">
+                            Net Annual Returns (IRR)
+                        </p>
+                    </div>
+
+                    <!-- SINGLE COLUMN WITH ICON -->
+                    <div class="col-md-4 col-sm-4 col-xs-4 single-stats border-left-colored border-right-colored wow fadeIn" data-wow-offset="10" data-wow-duration="1.75s">
+                        <div class="icon-container">
+                            <span class="colored-text icon-basic-message-multiple"></span>
+                        </div>
+                        <h4 class="white-text">600 - 800</h4>
+                        <p class="uppercase transparent-text small-text">
+                            Target Number of Loans (Initial)
+                        </p>
+                    </div>
+
+                    <!-- SINGLE COLUMN WITH ICON -->
+                    <div class="col-md-4 col-sm-4 col-xs-4 single-stats wow fadeInRight" data-wow-offset="10" data-wow-duration="1.75s">
+                        <div class="icon-container">
+                            <span class="colored-text icon-ecommerce-graph-increase"></span>
+                        </div>
+                        <h4 class="white-text">100%</h4>
+                        <p class="uppercase transparent-text small-text">
+                            Accounts with Positive Returns
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION -->
+                <div class="stats-footer">
+                    <div class="long-transparent-line">
+                    </div>
+                    <p class="white-text">
+                        We are ready to help you - <a href="#home" class="strong inpage-scroll">Get Started Now »</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="pricing grey-bg" id="section6">
+        <div class="container">
+
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+                <h2 class="dark-text"><strong>Portfolio Allocation Strategies</strong></h2>
+                <div class="colored-line">
+                </div>
+                <div class="sub-heading">
+                    LendingCalc offers cherry pick models for research based on your investment preference. LendingCalc also allows you to customize your own portfolio.
+                </div>
+            </div>
+
+            <!-- PRICING TABLE -->
+            <div class="row pricing-table">
+
+                <!-- SINGLE PACKAGE -->
+                <div class="col-md-4 wow fadeInLeft" data-wow-offset="20" data-wow-duration="1.75s">
+                    <div class="single-pricing border-bottom-hover">
+
+                        <div class="package-title">
+                            <h3 class="colored-text">Conservative</h3>
+                            <div class="colored-line">
+                            </div>
+                        </div>
+
+                        <h2 class="price"><span class="superscript"></span>10%<span class="month small-text">Per Year</span></h2>
+
+                        <ul class="package-list">
+                            <li><span class="dark-text strong">$10+</span>Recommended</li>
+                            <li><span class="dark-text strong">$2M</span>Maximum</li>
+                            <li><span class="dark-text strong">2-3 weeks</span>Allocation Rates</li>
+                            <li><span class="dark-text strong">400+</span>Loan Count</li>
+                            <li><span class="dark-text strong">4 times a day</span>Reinvestment</li>
+                        </ul>
+
+                        
+                    </div>
+                </div>
+
+                <!-- SINGLE PACKAGE -->
+                <div class="col-md-4 wow flipInY" data-wow-offset="10" data-wow-duration="1.5s">
+                    <div class="single-pricing border-bottom-hover">
+
+                        <div class="package-title">
+                            <h3 class="colored-text">Balanced</h3>
+                            <div class="colored-line">
+                            </div>
+                        </div>
+
+                        <h2 class="price"><span class="superscript"></span>11%<span class="month small-text">Per Year</span></h2>
+
+                        <ul class="package-list">
+                            <li><span class="dark-text strong">$20+</span>Recommended</li>
+                            <li><span class="dark-text strong">$2M</span>Maximum</li>
+                            <li><span class="dark-text strong">3 weeks</span>Allocation Rates</li>
+                            <li><span class="dark-text strong">500+</span>Loan Count</li>
+                            <li><span class="dark-text strong">4 times a day</span>Reinvestment</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- SINGLE PACKAGE -->
+                <div class="col-md-4 wow fadeInRight" data-wow-offset="20" data-wow-duration="1.75s">
+                    <div class="single-pricing border-bottom-hover">
+
+                        <div class="package-title">
+                            <h3 class="colored-text">Aggressive</h3>
+                            <div class="colored-line">
+                            </div>
+                        </div>
+                        <h2 class="price"><span class="superscript"></span>12%<span class="month small-text">Per Year</span></h2>
+
+                        <ul class="package-list">
+                            <li><span class="dark-text strong">$25+</span>Recommended</li>
+                            <li><span class="dark-text strong">$1M</span>Maximum</li>
+                            <li><span class="dark-text strong">3-4 weeks</span>Allocation Rates</li>
+                            <li><span class="dark-text strong">600+</span>Loan Count</li>
+                            <li><span class="dark-text strong">4 times a day</span>Reinvestment</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="features" id="explore" data-stellar-background-ratio="0.5">
+        <div class="overlay-layer-2">
+            <div class="container">
+
+                <!-- SECTION HEADER -->
+                <div class="section-header">
+                    <h2 class="white-text"><span class="strong white-text">Explore</span> LendingCalc</h2>
+                    <div class="colored-line">
+                    </div>
+                    <div class="sub-heading white-text">
+                        Maximize Returns and Minimize risks.
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- LEFT SIDE ELEMENTS -->
+                    <div class="col-md-3 text-right left-side wow fadeInRight" data-wow-offset="10" data-wow-duration="1.75s">
+
+                        <!-- SINGLE ELEMENT -->
+                        <div class="single-feature border-right-colored">
+                            <h4 class="colored-text">Cherry pick strategies</h4>
+                        </div>
+
+                        <!-- SINGLE ELEMENT -->
+                        <div class="single-feature border-right-colored">
+                            <h4 class="colored-text">Data driven Analytics</h4>
+                        </div>
+
+                        <!-- SINGLE ELEMENT -->
+                        <div class="single-feature border-right-colored">
+                            <h4 class="colored-text">Generous Diversification</h4>
+                        </div>
+
+                    </div>
+
+                    <!-- SCREENSHOTS -->
+                    <div class="col-md-6">
+                        <div id="screenshots" class="owl-carousel owl-theme">
+
+                            <!-- SINGLE SCREENSHOT -->
+                            <div class="screenshot">
+<<<<<<< HEAD
+                                <a href="https://stagingapp.lendingcalc.com/images/front/screenshots/1@2x.png" data-lightbox-gallery="gallery1">
+                                    <img src="https://stagingapp.lendingcalc.com/images/front/screenshots/1.png" alt="" />
+=======
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/1.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/1.png" alt="" />
+>>>>>>> 3f77316615f56640bcb15d2a0b80bfaf159aec5f
+                                </a>
+                            </div>
+
+                            <!-- SINGLE SCREENSHOT -->
+                            <div class="screenshot">
+<<<<<<< HEAD
+                                <a href="https://stagingapp.lendingcalc.com/images/front/screenshots/1@2x.png" data-lightbox-gallery="gallery1">
+                                    <img src="https://stagingapp.lendingcalc.com/images/front/screenshots/1.png" alt="" />
+=======
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/2.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/2.png" alt="" />
+>>>>>>> 3f77316615f56640bcb15d2a0b80bfaf159aec5f
+                                </a>
+                            </div>
+
+                            <!-- SINGLE SCREENSHOT -->
+                            <div class="screenshot">
+<<<<<<< HEAD
+                                <a href="https://stagingapp.lendingcalc.com/images/front/screenshots/1@2x.png" data-lightbox-gallery="gallery1">
+                                    <img src="https://stagingapp.lendingcalc.com/images/front/screenshots/1.png" alt="" />
+=======
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/3.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/3.png" alt="" />
+                                </a>
+                            </div>
+                            
+                            <div class="screenshot">
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/4.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/4.png" alt="" />
+                                </a>
+                            </div>
+                            
+                            <div class="screenshot">
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/5.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/5.png" alt="" />
+                                </a>
+                            </div>
+                            
+                            <div class="screenshot">
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/6.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/6.png" alt="" />
+                                </a>
+                            </div>
+                            
+                            <div class="screenshot">
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/7.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/7.png" alt="" />
+                                </a>
+                            </div>
+                            
+                            <div class="screenshot">
+                                <a href="http://idx.kadmine.dev/images/front/screenshots/8.png" data-lightbox-gallery="gallery1">
+                                    <img src="http://idx.kadmine.dev/images/front/screenshots/8.png" alt="" />
+>>>>>>> 3f77316615f56640bcb15d2a0b80bfaf159aec5f
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- RIGHT SIDE FEATURES -->
+                    <div class="col-md-3 text-left right-side wow fadeInLeft" data-wow-offset="10" data-wow-duration="1.75s">
+
+                        <!-- SINGLE ELEMENT -->
+                        <div class="single-feature border-left-colored">
+                            <h4 class="colored-text">Custom Strategies</h4>
+                        </div>
+
+                        <!-- SINGLE ELEMENT -->
+                        <div class="single-feature border-left-colored">
+                            <h4 class="colored-text">Intelligent orders</h4>
+                        </div>
+
+                        <!-- SINGLE ELEMENT -->
+                        <div class="single-feature border-left-colored">
+                            <h4 class="colored-text">Fast Execution</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    
+    
+    <section class="call-to-action" id="section11" data-stellar-background-ratio="0.1">
+        <div class="overlay-layer-2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <h2 class="white-text strong wow fadeInLeft" data-wow-duration="2s" data-wow-offset="40">Start your FREE Trial Now!</h2>
+
+                        <a href="#home" class="btn btn-primary standard-button inpage-scroll wow fadeInRight" data-wow-duration="2s" data-wow-offset="40" type="button">Get Started</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REGISTRATION FORM FOR POPUP BOX -->
+    <div class="modal fade bs-example-modal-sm" id="stamp-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="vertical-registration-form">
+                    <h4 class="dark-text form-heading">Get started, your first 100k ramp up FREE</h4>
+                    <form class="registration-form" id="contact-form">
+                        <input type="text" id="cf-name" name="name" class="form-control input-box" placeholder="Name">
+                        <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
+                        <input type="text" id="cf-subject" name="subject" class="form-control input-box" placeholder="Subject">
+                        <textarea name="message" id="cf-message" class="form-control textarea-box" rows="4" placeholder="Message"></textarea>
+                        <button class="btn btn-primary standard-button">Subscribe</button>
+                    </form>
+                    <p class="email-success dark-text">
+                        <span class="icon-check-alt2 colored-text"></span>Email sent successfully
+                    </p>
+                    <p class="email-error dark-text">
+                        <span class="icon-close-alt2"></span>Error! Please enter valid fields
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer grey-bg">
+        ©2016 LendingCalc LLC. All Rights Reserved
+        <ul class="footer-links small-text">
+            <li><a href="#privacy" class="dark-text">Privacy Policy</a>
+            </li>
+        </ul>
+
+        <ul class="social-icons">
+            <li><a target="_blank" href="https://www.linkedin.com/company/idx-LendingCalc"><span class="icon-social-linkedin transparent-text-dark"></span></a>
+            </li>
+            <!-- <li><a target="_blank" href="https://bugtracker.zoho.com/portal/idxLendingCalc#mybugs"><span class="icon-social-dribbble transparent-text-dark">Bug Tracker</span></a>
+            </li> -->
+            
+        </ul>
+
+    </footer>
+
+    <!-- =========================
+     SECTION: Privacy Policy
+    ============================== -->
+    <section class="services white-bg" id="privacy">
+        <div class="container">
+
+            <div class="row">
+
+                <article>
+                   <div class="entry-content clearfix">
+
+                    <p><strong>LendingCalc Privacy Policy</strong></p>
+                    <p>Policy Effective Date: December 30, 2015</p>
+                    <p class="text-left">This document describes how we treat personal information when you use LendingCalc’s products and services on its website and related websites.</p>
+                    <p class="text-left"><strong>Personal Information</strong></p>
+                    
+                    <ul class="text-left">
+                        <li>You become a User when you access the Site, pursuant to LendingCalc’s Terms of Use. Except as required by law or requested by regulatory authorities, LendingCalc agrees to maintain your non-public information in strict confidence.</li>
+                        <li>LendingCalc restricts access to non-public personal information about Users to certain LendingCalc employees who require that information in order to maintain and operate the Site. LendingCalc may ask you for additional personal information, such as your name or picture, in order to provide personalized services to you. LendingCalc stores, processes, and maintains data related to you in order to provide its products and services through the Site. LendingCalc’s uses for this data are described below.</li>
+                    </ul>
+                    
+                    <p class="text-left"><strong>Use of Information</strong></p>
+                    <ul class="text-left">
+                        <li>LendingCalc maintains and processes your LendingCalc account and its contents to provide LendingCalc’s products and services to you and to improve our services.</li>
+                        <li>LendingCalc’s servers process the information you provide to LendingCalc for various purposes, including but not limited to formatting and displaying your information, delivering related content, sharing community information, and other purposes relating to the Site.</li>
+                        <li>LendingCalc may send you information related to LendingCalc services, the blog, or your account if you are a Client. If you decide at any time that you no longer wish to receive marketing communications from us, please follow the “unsubscribe” instructions provided in the communications.</li>
+                    </ul>
+                    
+                    <p class="text-left"><strong>Information Sharing and Onward Transfer</strong></p>
+                    <ul class="text-left">
+                        <li>We do not sell, rent, or otherwise share your personal information with any third parties except as permitted or required by law, such as when we reasonably believe it is necessary or appropriate to investigate, prevent, or take action regarding illegal activities, suspected fraud, frontrunning or scalping, situations involving potential threats to the physical safety of any person, or violations of our Terms of Use.</li>
+                        <li>You understand and agree that any personal information that you provide through the Site and explicitly agree to share publicly might be made publicly available in LendingCalc’s discretion, and that other Users may use and reproduce such. We have no control over the use by other Users of the information that you voluntarily disclose to LendingCalc for this purpose or to the public in general.</li>
+                        <li>LendingCalc maintains physical, electronic and procedural safeguards that comply with federal standards to guard Users’ non-public personal information.</li>
+                    </ul>
+                    
+                    <p class="text-left"><strong>Special Rules for the Use and Sharing of Information of Clients</strong></p>
+                    
+                    <ul class="text-left">
+                        <li>If you wish to become a Client, we will ask you for certain information, including, but not limited to, your full legal name, contact information, tax ID, corporate domicile, investment objectives, and other regulatory disclosures that may be necessary. We require such information in order to be able to provide our services to Clients in accordance with the rules of regulatory bodies. You may choose not to provide such information to us, but you will not be able to become a Client.</li>
+                    </ul>
+                    
+                    <p class="text-left"><strong>Changes to this Policy</strong></p>
+                    <ul class="text-left">
+                        <li>This Privacy Policy may change from time to time.  We will post any Privacy Policy changes on this page. Each version of this Privacy Policy will be identified at the top of the page by its effective date.</li>
+                    </ul>
+                   </div><!-- .entry-content -->
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://stagingapp.lendingcalc.com/js/front/jquery.min.js"></script>
+    <script>
+        /* PRE LOADER */
+        jQuery(window).load(function () {
+            "use strict";
+            jQuery(".status").fadeOut();
+            jQuery(".preloader").delay(1000).fadeOut("slow");
+        })
+    </script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/smoothscroll.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/bootstrap.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/jquery.nav.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/wow.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/nivo-lightbox.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/owl.carousel.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/jquery.stellar.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/retina.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/jquery.ajaxchimp.min.js"></script>
+    <script src="https://stagingapp.lendingcalc.com/js/front/custom.js"></script>
+    
+    <script type="text/javascript">
+
+   window._chatlio = window._chatlio||[];
+
+   !function(){ var t=document.getElementById("chatlio-widget-embed");if(t&&window.ChatlioReact&&_chatlio.init)return void _chatlio.init(t,ChatlioReact);for(var e=function(t){return function(){_chatlio.push([t].concat(arguments)) }},i=["configure","identify","track","show","hide","isShown","isOnline"],a=0;a<i.length;a++)_chatlio[i[a]]||(_chatlio[i[a]]=e(i[a]));var n=document.createElement("script"),c=document.getElementsByTagName("script")[0];n.id="chatlio-widget-embed",n.src="https://w.chatlio.com/w.chatlio-widget.js",n.async=!0,n.setAttribute("data-embed-version","2.1");
+
+      n.setAttribute('data-widget-id','696902df-9b06-41c3-6521-8b4bac7b69db');
+
+      c.parentNode.insertBefore(n,c);
+
+   }();
+
+</script>
+</body>
+</html>

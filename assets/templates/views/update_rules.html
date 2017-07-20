@@ -1,0 +1,88 @@
+<div class="panel panel-default" ng-controller="UpdateRuleController" style="padding:5px;">
+  <toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+  <form role="form"  ng-submit="save()">
+  <div class="row">
+    <div class="col-lg-12 col-md-12" style="padding-top:50px; padding-bottom:50px;">
+      
+        <div class="form-group col-lg-12 col-md-12">
+           <label class="col-sm-4 control-label">Rule Name</label>
+           <div class="col-sm-8">
+            <input type="text" ng-model="rules.ruleName" class="form-control" />
+            </div>
+        </div>
+        <div class="clearfix" />
+        <div class="form-group col-lg-12 col-md-12">
+            <label class="col-sm-4 control-label">Amount per Loan (must be increment of $25)</label>
+            <div class="col-sm-8">
+              <div class="col-xs-5" style="padding-left: 0px;">
+                <input type="number" ng-model="rules.minTradeAmount" step="25" min="0" class="form-control" />
+              </div>
+              <div class="col-xs-2 text-center">To</div> 
+              <div class="col-xs-5">
+                <input type="number" ng-model="rules.maxTradeAmount" step="25" min="0" class="form-control" />
+              </div>
+            </div>
+        </div>
+
+        <!--<div class="form-group col-lg-12 col-md-12">
+           <label class="col-sm-4 control-label"></label>
+           <div class="col-sm-4">
+            <label class="control-label">Execution Start Time</label>
+            <timepicker name="timepickr" required="" ng-model="execStartTime" ng-change="execStartTimeChanged()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+            </div>
+
+            <div class="col-sm-4">
+            <label class="control-label">Execution End Time</label>
+            <timepicker name="timepickr1" required="" ng-model="execEndTime" ng-change="execEndTimeChanged()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+            </div>
+        </div>-->
+
+        <div class="clearfix" style="padding-bottom: 50px;" />
+
+        <div class="custom_filters col-lg-12 col-md-12" data-ng-repeat="filter in rules.filters" style="padding-bottom: 20px;">
+          <div class="form-group">
+             <label class="col-sm-4" for="filter" ng-model="filter.id" style="padding-left:0px;"> 
+              <em class="fa fa-minus-circle" ng-click="removeFilter($index)"></em> {{filter.name}} <em class="icon-question" tooltip-html-unsafe="{{filter.help}}"></em>
+             </label>
+             <label class="col-sm-8 text-right" for="filterdesc" id="lbl_{{$index}}"></label>    
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12 slim-slider" ng-if="loadSlider(filter, 'slider')" style="padding-left: 0px;">
+                <custom-slider id="{{loadSliderData($index)}}" data-slider-id="{{loadSliderData($index)}}" data-slider-min="{{filter.min}}" data-slider-max="{{filter.max}}" data-slider-step="{{filter.step}}" data-slider-value="{{filter.value}}" data-slider-orientation="horizontal" data-desc="{{filter.desc}}" data-type="{{filter.type}}" data-slider-tooltip="hide"></custom-slider>
+             </div>
+             <div class="col-sm-12 slim-slider" ng-if="loadSlider(filter, 'selection')">
+                <div data-ng-repeat="(k, v) in filter.list" style="float: left;">
+                  <button type="button" class="btn btn-labeled" ng-class="{'btn-green': (rules.filters[$parent.$index]['value'].indexOf(k) >= 0), 'btn-default': (rules.filters[$parent.$index]['value'].indexOf(k) < 0)}" ng-click="setSelectionValues($parent.$index,$index, k)">{{v}}</button>&nbsp;&nbsp;&nbsp;&nbsp;<!-- value added -->
+                </div>
+             </div>
+             <div class="col-sm-12" ng-if="loadSlider(filter, 'text')">
+                <input type="text" ng-model="rules.filters[$parent.$index]['value']" name="filter.id" id="filter.id" />
+             </div>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12 col-md-12">
+          <label data-ng-repeat="button in rules.buttons"  ng-hide="button.hide">
+            <!-- Success button with label -->
+            <button type="button" class="btn btn-labeled" ng-click="addFilters($index)" tooltip-html-unsafe="{{button.help}}">
+               <span class="btn-label"><i class="fa fa-plus"></i>
+               </span><strong>{{button.name}}</strong>
+            </button>&nbsp;&nbsp;&nbsp;
+          </label>
+        </div>
+
+      
+    </div>
+  </div>
+  <div class="panel-footer text-center">
+    <div class="row">
+      <button class="btn btn-green" type="submit">Save</button>
+      <button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+    <div class="row text-left">
+      * Estimates from loans made available within the last 2 weeks. Actual investment may vary based on available loans and cash in your account.
+    </div>
+  </div>
+  </form>
+</div>

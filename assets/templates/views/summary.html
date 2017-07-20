@@ -1,0 +1,139 @@
+<!-- <h3>Summary
+   <small>Consolidated Account Summary</small>
+</h3> -->
+
+<div ng-show="showGridEmpty">
+  <button type="button" class="btn btn-primary btn-lg" ng-click="linkAccount()">Link Account</button>
+  <button type="button" class="btn btn-default" ng-click="refresh()"><span class="fa fa-refresh fa-3x" aria-hidden="true"></span></button>
+</div>
+
+<!-- START widgets box-->
+<div class="row" ng-show="showGrid" style="margin-bottom:5px;">
+  <div class="col-lg-10"></div>
+  
+  
+  <div class="col-lg-2">
+    <button type="button" class="btn btn-default" ng-click="refresh()"><span class="fa fa-refresh fa-3x" aria-hidden="true"></span></button>
+  </div>
+</div>
+
+<div class="row"   ng-show="showGrid">
+   <div class="col-lg-3 col-sm-6">
+      <div class="panel widget bg-green">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-green-dark pv-lg">
+               <em class="fa fa-file-o fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+               <div class="h2 mt0">{{pLoans}}</div>
+               <div class="text-uppercase">Loans</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-sm-6">
+      <div class="panel widget bg-green">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-green-dark pv-lg">
+               <em class="fa fa-dollar fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+               <div class="h2 mt0"><small>$</small>{{pCashAvailable | number:0}}
+                  
+               </div>
+               <div class="text-uppercase">Cash Available</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="panel widget bg-green">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-green-dark pv-lg">
+               <em class="fa fa-institution fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+               <div class="h2 mt0"><small>$</small>{{pCapital | number:0}}
+                  
+               </div>
+               <div class="text-uppercase">Capital</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="panel widget bg-green">
+         <div class="row row-table">
+            <div class="col-xs-4 text-center bg-green-dark pv-lg">
+               <em class="fa fa-bar-chart fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+               <div class="h2 mt0">{{pReturn | number:2}}<small>%</small>
+                  
+               </div>
+               <div class="text-uppercase">Returns</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END widgets box-->
+
+
+<div>
+<div class="container-fluid double-up no-overlay" ng-class="{whirl: showGridEmpty == false && showGrid == false}" >
+   <div class="panel panel-default col-lg-12" ng-show="showGrid">    
+      <table class="table ng-table-rowselected">
+        <thead>
+             <tr>
+                 <th><div style="text-align:center;"  class="ngCellText">As of Date </div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Account Name</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Cash Balance</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Principal Received</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Total Capital</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText"># of Items</div></th>
+                 <th><div style="text-align:center;"  class="ngCellText">Annualized APR</div></th>
+             </tr>
+        </thead>
+        <tbody>  
+         <tr ng-repeat-start="user in data track by $index"  data-toggle="collapse" ng-click="loadCollapse($index)" class="accordion-toggle">
+             
+            <td data-title="'As of Date'"><div style="text-align:center;"  class="ngCellText">{{user.ms_asOfDate|date:'MM/dd/yyyy'}}</div></td>
+             <td data-title="'Account Name'"><div style="text-align:center;"  class="ngCellText">{{user.ms_account_id.accountName}} </div></td>
+            <td data-title="'Cash Balance'"><div style="text-align:center;"  class="ngCellText">{{user.ms_availableCash | currency}}</div></td>
+            <td data-title="'Total Invested'"><div style="text-align:center;"  class="ngCellText">{{user.ms_principalReceived | currency}}</div></td>
+            <td data-title="'Total NAV'"><div style="text-align:center;"  class="ngCellText">{{user.ms_totalNAV | currency}}</div></td>
+            <td class="wd-xs hidden-xs hidden-sm">
+                  <div class="ph">
+                     <p class="m0 text-muted">
+                        <em class="icon-doc mr fa-lg"></em>{{user.ms_totalNotes}}</p>
+                  </div>
+            </td>
+            <td data-title="'Annualized APR'"><div style="text-align:center;"  class="ngCellText">{{user.ms_annualizedAPR | number:2}}%</div></td>
+         </tr>
+
+         <tr ng-repeat-end>
+          <td colspan="7" class="noPadding"><div class="accordian-body" ng-show="sIndex == $index" id="row-{{$index}}">Summary Details</div></td>
+         </tr>
+        </tbody>    
+      </table>
+   </div>
+</div>
+</div> 
+
+<div class="row"    ng-show="showGrid">
+   <div class="col-lg-12">
+      <div class="row">
+         <div class="col-lg-12">
+              <iframe id="analysisFrame" frameborder="0" width="100%" height="1200px">Please wait while we generate your analysis. This may take up to 24 hours.</iframe>
+          </div>
+      </div>
+   </div>
+</div>
+  
+
+
+
+
+
+
